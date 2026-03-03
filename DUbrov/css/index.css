@@ -1,0 +1,334 @@
+/* Базовый сброс (CSS Reset) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Или более современный вариант */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+
+.bg-dark-purple {
+    background-color: rgb(48, 0, 95) !important;
+}
+
+.bg-light-gray {
+    background-color: rgb(205, 205, 205) !important;
+}
+
+.text-dark-purple {
+    color: rgb(48, 0, 95) !important;
+}
+
+.text-light-gray {
+    color: rgb(205, 205, 205) !important;
+}
+
+.border-dark-purple {
+    border-color: rgb(48, 0, 95) !important;
+}
+
+.header {
+    width: 100%;
+    padding: 3px 0;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+.nav-item {
+    flex: 1;
+
+}
+.nav-link {
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 0.5rem;
+    color: rgb(205, 205, 205);
+    text-align: center;
+    transition: all .3s;
+}
+
+.nav-link:hover {
+    background-color: rgb(205, 205, 205);
+    color: rgb(48, 0, 95);
+}
+
+.logo {
+    height: 45px;
+    width: 300px;
+    background-image: url(/obrazky/logo.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+
+
+.cart {
+    background-color: rgb(205, 205, 205);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    min-height: 40px;
+}
+
+
+
+.products-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.chat {
+    background-color: rgb(205, 205, 205);
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer {
+    background-color: rgb(48, 0, 95);
+    color: rgb(205, 205, 205);
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    width: 100%;
+    gap: 1rem;
+}
+
+.btn-add {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    border: none;
+    border-radius:.2rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn-delete {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: none;
+    border-radius:  .2rem;
+    cursor: pointer;
+        transition: all .3s;
+}
+
+.btn-delete:hover {
+    transform: scale(1.1) ;
+
+}
+
+.btn-add:hover {
+    transform: scale(1.1);
+}
+
+
+.product-card {
+    height: 380px;
+}
+
+.items {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+
+.cartCont {
+    width: 200px;
+    background-color: red;
+}
+
+@media (max-width: 1199px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+    }
+
+    .product-card {
+        height: 360px;
+    }
+}
+
+@media (max-width: 991px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .product-card {
+        height: 340px;
+    }
+
+    .product-image {
+        height: 140px;
+    }
+}
+
+@media (max-width: 767px) {
+    .products-grid {
+        gap: 1.2rem;
+    }
+
+    .product-card {
+        height: 320px;
+    }
+
+    .product-image {
+        height: 130px;
+    }
+
+    .btn-add,
+    .btn-delete {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 575px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .product-card {
+        height: 300px;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .product-image {
+        height: 120px;
+    }
+
+    .product-title {
+        font-size: 0.9rem;
+    }
+}
